@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home — Game Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="home">
+
+  <!-- Navbar được js/navbar.js sinh ra tự động vào đây -->
+  <div id="navbar-placeholder"></div>
+
+  <header class="hero">
+    <h1><span class="hero-icon">🎮</span> <span class="gradient-text">Game Dev Portfolio</span></h1>
+    <p>Tổng hợp các game mình đã làm — bấm vào một game để xem chi tiết</p>
+  </header>
+
+  <!-- Danh sách game được js/home.js sinh ra tự động từ js/games.js -->
+  <main id="game-list" class="game-list"></main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Promici. All rights reserved.</p>
+  </footer>
+
+  <script src="js/games.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

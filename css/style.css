@@ -1,0 +1,520 @@
+/* ===== Theme variables — đổi màu/độ "lung linh" ở đây ===== */
+:root {
+  --bg: #f5f6fb;
+  --bg-soft: #ffffff;
+  --border: #e9eaf3;
+  --text: #2b2d3a;
+  --text-muted: #6c7086;
+  --accent: #7c5cff;
+  --accent-2: #ff79b0;
+  --accent-3: #4cd2ff;
+  --gradient: linear-gradient(135deg, var(--accent), var(--accent-2));
+  --shadow-soft: 0 10px 30px -15px rgba(43, 45, 58, 0.18);
+  --shadow-hover: 0 24px 60px -18px rgba(124, 92, 255, 0.35);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --navbar-height: 72px;
+}
+
+/* ===== Reset & base ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(124, 92, 255, 0.12), transparent 38%),
+    radial-gradient(circle at 88% 6%, rgba(255, 121, 176, 0.12), transparent 36%),
+    radial-gradient(circle at 50% 100%, rgba(76, 210, 255, 0.10), transparent 42%),
+    var(--bg);
+  background-attachment: fixed;
+}
+
+a {
+  color: inherit;
+}
+
+/* Các trang có navbar cần chừa khoảng trống phía trên bằng đúng chiều cao navbar
+   (navbar dùng position: fixed nên không còn chiếm chỗ trong luồng layout) */
+body[data-page="home"],
+body[data-page="blog"],
+body[data-page="about"] {
+  padding-top: var(--navbar-height);
+}
+
+/* ===== Navbar (kính mờ - glassmorphism) ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--navbar-height);
+  padding: 0 40px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 8px 30px -20px rgba(43, 45, 58, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+/* Icon (emoji) phải đứng riêng, KHÔNG được áp background-clip: text,
+   nếu không emoji sẽ bị tô theo gradient và render méo/lỗi như chữ thường */
+.navbar-brand-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+/* Class dùng chung để tô chữ bằng gradient — chỉ áp cho TEXT, không áp cho emoji/icon */
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+.navbar-links a {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  padding-bottom: 6px;
+  transition: color 0.3s var(--ease);
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--gradient);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s var(--ease);
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+  color: var(--accent);
+}
+
+.navbar-links a:hover::after,
+.navbar-links a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ===== Hero (đầu trang Home) ===== */
+.hero {
+  text-align: center;
+  padding: 64px 20px 36px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.hero-icon {
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.hero h1 .gradient-text {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2) 55%, var(--accent-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* ===== Danh sách game ở trang Home ===== */
+.game-list {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 40px 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.game-showcase {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 40px;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  /* trạng thái ẩn ban đầu, sẽ "hiện dần" khi cuộn tới (xem js/home.js) */
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    transform 0.6s var(--ease),
+    box-shadow 0.5s var(--ease),
+    border-color 0.4s var(--ease),
+    opacity 0.6s var(--ease);
+}
+
+.game-showcase.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.game-showcase.is-visible:hover,
+.game-showcase.is-visible:focus-visible {
+  transform: translateY(-10px) scale(1.012);
+  box-shadow: var(--shadow-hover);
+  border-color: transparent;
+  outline: none;
+}
+
+.game-showcase-info {
+  flex: 1 1 0;
+}
+
+.game-showcase-image {
+  flex: 1 1 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.game-showcase-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  background: var(--border);
+  transition: transform 0.7s var(--ease);
+}
+
+.game-showcase.is-visible:hover .game-showcase-image img {
+  transform: scale(1.06);
+}
+
+.game-tag {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: var(--gradient);
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.game-showcase-info h2 {
+  font-size: 1.7rem;
+  margin-bottom: 14px;
+}
+
+.game-showcase-info p {
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.btn-detail {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  font-weight: 600;
+  border: 1.5px solid var(--accent);
+  padding: 10px 22px;
+  border-radius: 999px;
+  transition:
+    background 0.35s var(--ease),
+    color 0.35s var(--ease),
+    box-shadow 0.35s var(--ease),
+    transform 0.35s var(--ease),
+    border-color 0.35s var(--ease);
+}
+
+.btn-detail:hover,
+.game-showcase.is-visible:hover .btn-detail {
+  background: var(--gradient);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 12px 28px -10px rgba(124, 92, 255, 0.55);
+  transform: translateX(4px);
+}
+
+@media (max-width: 760px) {
+  .game-showcase {
+    flex-direction: column;
+    padding: 28px;
+  }
+}
+
+/* ===== Trang nội dung đơn giản (Blog / About) ===== */
+.page-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 70px 40px;
+}
+
+.page-content h1 {
+  display: inline-block;
+  font-size: 2rem;
+  margin-bottom: 22px;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.page-content p {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* "Sắp ra mắt" — dùng cho trang Blog / About khi chưa có nội dung thật */
+.coming-soon {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 40px;
+}
+
+.coming-soon-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: var(--gradient);
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.coming-soon h1 {
+  margin-bottom: 14px;
+}
+
+.coming-soon p {
+  max-width: 420px;
+  margin-bottom: 30px;
+}
+
+/* ===== Trang chi tiết game (KHÔNG có navbar) ===== */
+.game-detail {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 44px 40px 90px;
+}
+
+/* --- Khối đầu trang: nút quay lại + nhãn + tiêu đề, mỗi thứ một dòng riêng --- */
+.detail-header {
+  margin-bottom: 40px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-soft);
+  transition: color 0.3s var(--ease), transform 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.back-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateX(-4px);
+}
+
+.detail-header .game-tag {
+  display: block;
+  width: fit-content;
+  margin: 22px 0 12px;
+}
+
+.detail-header h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* --- Bố cục 2 cột: nội dung chính bên trái, sidebar (link tham khảo) bên phải --- */
+.detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 44px;
+  align-items: start;
+}
+
+.detail-main {
+  min-width: 0;
+}
+
+/* Khung video mở đầu, tỉ lệ 16:9 responsive */
+.detail-video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #14141c;
+  margin-bottom: 36px;
+  box-shadow: var(--shadow-soft);
+}
+
+.detail-video-wrapper iframe,
+.detail-video-wrapper video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.detail-section-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.detail-content p {
+  color: var(--text-muted);
+  margin-bottom: 22px;
+  white-space: pre-line;
+  font-size: 1.02rem;
+}
+
+.detail-image {
+  margin: 30px 0;
+}
+
+.detail-image img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  box-shadow: var(--shadow-soft);
+}
+
+.detail-image figcaption {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* --- Sidebar: thẻ "Link tham khảo" dính theo khi cuộn --- */
+.detail-sidebar {
+  position: sticky;
+  top: 28px;
+}
+
+.sidebar-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: var(--shadow-soft);
+}
+
+.sidebar-card h3 {
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.detail-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(124, 92, 255, 0.07);
+  transition: background 0.3s var(--ease), color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.detail-links a:hover {
+  background: var(--gradient);
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.detail-links .link-arrow {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 880px) {
+  .detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-sidebar {
+    position: static;
+  }
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  text-align: center;
+  padding: 28px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+}

@@ -23,63 +23,93 @@
 
 const games = [
   {
-    id: "space-shooter",
-    title: "Space Shooter 2D",
-    image: "assets/images/placeholder-1.svg",
-    shortDesc: "Game bắn phi thuyền 2D làm bằng JavaScript & Canvas.",
+    id: "bubble-tea-go",
+    title: "Bubble Tea Go",
+    image: "assets/images/bubble-tea-go-thumbnail.png",
+    shortDesc: "Game platformer được team thực hiện trong 36h tại Global Game Jam Vietnam 2025. Game đạt giải nhất cuộc thi phần digital game.",
     detail: {
-      introVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      introVideo: "https://www.youtube.com/watch?v=DGzBlY79ixY&t=3s",
       content: [
         {
           type: "text",
           value:
-            "Space Shooter 2D là game bắn phi thuyền theo phong cách arcade cổ điển. " +
-            "Người chơi điều khiển phi thuyền né đạn, tiêu diệt quái và thu thập power-up.",
+            "Bubble Tea Go là game platformer với mục tiêu giải đố để đưa 2 nhân vật cùng vượt qua các chướng ngại vật trên đường về đích. 2 nhân vật này sử dụng chung một bộ điều khiển, nên người chơi phải tính toán di chuyển sao cho cả 2 cùng vượt qua được chướng ngại vật. Game có 3 level với độ khó tăng dần, mỗi level có một cơ chế mới được giới thiệu để tăng tính thử thách.",
         },
         {
           type: "image",
-          src: "assets/images/placeholder-1.svg",
-          caption: "Màn chơi đầu tiên của game",
+          src: "assets/images/bubble-tea-go-1.png",
+          caption: "gameplay",
         },
         {
           type: "text",
           value:
-            "Mình tự code toàn bộ engine va chạm và hệ thống spawn quái bằng JavaScript thuần, " +
-            "không dùng thư viện ngoài để hiểu rõ cách hoạt động ở tầng thấp nhất.",
+            "Game được làm trong 36h, sử dụng Unity và bộ asset 2D tự vẽ, quá trình làm game được thực hiện hoàn toàn trong khuân khổ cuộc thi Global Game Jam Vietnam với chủ đề Bubble",
         },
       ],
       links: [
-        { label: "GitHub Repo", url: "https://github.com/your-username/space-shooter-2d" },
-        { label: "Chơi thử trên Itch.io", url: "https://your-username.itch.io/space-shooter-2d" },
+        { label: "GitHub Repo", url: "https://github.com/Tana-Tana/GameJam2025" },
+        { label: "Chơi thử trên Itch.io", url: "https://osymi.itch.io/bubble-tea-go" },
       ],
     },
   },
   {
-    id: "platformer-adventure",
-    title: "Platformer Adventure",
-    image: "assets/images/placeholder-2.svg",
-    shortDesc: "Game phiêu lưu đi cảnh (platformer) làm bằng Unity.",
+    id: "grind-shot",
+    title: "Grind Shot",
+    image: "assets/images/grind-shot-thumbnail.png",
+    shortDesc: "Game casual được team thực hiện trong 36h tại Voodoo Game Jam Vietnam 2026.",
     detail: {
-      introVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      introVideo: "https://www.youtube.com/shorts/b6e1MWiD-yk",
       content: [
         {
           type: "text",
           value:
-            "Một game platformer 2D với hệ thống map nhiều màn, nhân vật có thể chạy, " +
-            "nhảy, leo tường. Tập trung xây dựng hệ thống điều khiển nhân vật mượt mà.",
+            "Một game hyper casual 2D được xây dựng với lối chơi đơn giản, " +
+            "nhiệm vụ của người chơi là giải đố để đưa các object ra khỏi ma trận để tiêu diệt các monster. " +
+            "Mỗi object sẽ có hướng và màu sắc, người chơi cần tính toán để chọn màu sắc hợp lý và clear được tất cả objects.",
         },
         {
           type: "image",
-          src: "assets/images/placeholder-2.svg",
-          caption: "Thiết kế level theo độ khó tăng dần",
+          src: "assets/images/grind-shot-1.png",
+          caption: "gameplay",
         },
         {
           type: "text",
-          value: "Game được làm trong khoảng 2 tháng, sử dụng Unity và bộ asset 2D tự vẽ.",
+          value: "Game được lấy ý tưởng từ 2 tựa game puzzle nổi tiếng là Bus Out và Marble Sort. Ý tưởng được phát triển dưới sự hướng dẫn của các mentor thuộc team Voodoo trong khuôn khổ cuộc thi Voodoo Game Jam Vietnam 2026.",
         },
       ],
       links: [
-        { label: "GitHub Repo", url: "https://github.com/your-username/platformer-adventure" },
+        { label: "GitHub Repo", url: "https://github.com/0sym1/Gamejam-Voodoo-2026" },
+      ],
+    },
+  },
+
+  {
+    id: "aquapark",
+    title: "Aquapark",
+    image: "assets/images/aquapark-thumbnail.png",
+    shortDesc: "Game arcade được team thực hiện trong 36h tại Voodoo Game Jam Vietnam 2026.",
+    detail: {
+      introVideo: "https://www.youtube.com/shorts/b6e1MWiD-yk",
+      content: [
+        {
+          type: "text",
+          value:
+            "Một game hyper casual 2D được xây dựng với lối chơi đơn giản, " +
+            "nhiệm vụ của người chơi là giải đố để đưa các object ra khỏi ma trận để tiêu diệt các monster. " +
+            "Mỗi object sẽ có hướng và màu sắc, người chơi cần tính toán để chọn màu sắc hợp lý và clear được tất cả objects.",
+        },
+        {
+          type: "image",
+          src: "assets/images/aquapark-1.png",
+          caption: "gameplay",
+        },
+        {
+          type: "text",
+          value: "Game được lấy ý tưởng từ 2 tựa game puzzle nổi tiếng là Bus Out và Marble Sort. Ý tưởng được phát triển dưới sự hướng dẫn của các mentor thuộc team Voodoo trong khuôn khổ cuộc thi Voodoo Game Jam Vietnam 2026.",
+        },
+      ],
+      links: [
+        { label: "GitHub Repo", url: "https://github.com/0sym1/Gamejam-Voodoo-2026" },
       ],
     },
   },

@@ -433,12 +433,16 @@ body[data-page="about"] {
 
 .detail-image {
   margin: 30px 0;
+  text-align: center;
 }
 
 .detail-image img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
   border-radius: 16px;
-  display: block;
+  display: inline-block;
   box-shadow: var(--shadow-soft);
 }
 

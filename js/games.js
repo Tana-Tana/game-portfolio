@@ -28,7 +28,7 @@ const games = [
     image: "assets/images/bubble-tea-go-thumbnail.png",
     shortDesc: "Game platformer được team thực hiện trong 36h tại Global Game Jam Vietnam 2025. Game đạt giải nhất cuộc thi phần digital game.",
     detail: {
-      introVideo: "https://www.youtube.com/watch?v=DGzBlY79ixY&t=3s",
+      introVideo: "https://www.youtube.com/watch?v=qCD1nLE6oL0",
       content: [
         {
           type: "text",

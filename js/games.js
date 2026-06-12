@@ -89,7 +89,7 @@ const games = [
     image: "assets/images/aquapark-thumbnail.png",
     shortDesc: "Game hyper casual 3D với lối chơi thân thiện, được tập trung vào feeling của người chơi.",
     detail: {
-      introVideo: "https://www.youtube.com/shorts/b6e1MWiD-yk",
+      introVideo: "https://www.youtube.com/shorts/l77ZUdCZ5e4",
       content: [
         {
           type: "text",

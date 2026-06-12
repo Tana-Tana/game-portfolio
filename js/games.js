@@ -87,16 +87,16 @@ const games = [
     id: "aquapark",
     title: "Aquapark",
     image: "assets/images/aquapark-thumbnail.png",
-    shortDesc: "Game arcade được team thực hiện trong 36h tại Voodoo Game Jam Vietnam 2026.",
+    shortDesc: "Game hyper casual 3D với lối chơi thân thiện, được tập trung vào feeling của người chơi.",
     detail: {
       introVideo: "https://www.youtube.com/shorts/b6e1MWiD-yk",
       content: [
         {
           type: "text",
           value:
-            "Một game hyper casual 2D được xây dựng với lối chơi đơn giản, " +
-            "nhiệm vụ của người chơi là giải đố để đưa các object ra khỏi ma trận để tiêu diệt các monster. " +
-            "Mỗi object sẽ có hướng và màu sắc, người chơi cần tính toán để chọn màu sắc hợp lý và clear được tất cả objects.",
+            "Một game hyper casual 3D được xây dựng với lối chơi thân thiện, " +
+            "Nhiệm vụ của người chơi là lựa chọn các phao trên khay, làm sao để các phao có thể đưa được tất cả người ở hàng chờ ra khỏi hàng đợi." +
+            "Mỗi phao và người sẽ có màu sắc khác nhau, người chơi cần tính toán để chọn phao phù hợp với màu sắc của người để clear được tất cả người chơi.",
         },
         {
           type: "image",
@@ -105,11 +105,11 @@ const games = [
         },
         {
           type: "text",
-          value: "Game được lấy ý tưởng từ 2 tựa game puzzle nổi tiếng là Bus Out và Marble Sort. Ý tưởng được phát triển dưới sự hướng dẫn của các mentor thuộc team Voodoo trong khuôn khổ cuộc thi Voodoo Game Jam Vietnam 2026.",
+          value: "",
         },
       ],
       links: [
-        { label: "GitHub Repo", url: "https://github.com/0sym1/Gamejam-Voodoo-2026" },
+        { label: "GitHub Repo (private)", url: "https://github.com/0sym1/" },
       ],
     },
   },

@@ -1,3 +1,22 @@
+// Chuyển link YouTube thường (watch / shorts / youtu.be) thành link embed để nhúng được vào iframe
+function toYouTubeEmbedUrl(url) {
+  if (!url) return url;
+
+  let videoId = null;
+
+  const watchMatch = url.match(/[?&]v=([^&]+)/);
+  const shortsMatch = url.match(/youtube\.com\/shorts\/([^?&/]+)/);
+  const shortLinkMatch = url.match(/youtu\.be\/([^?&/]+)/);
+
+  if (watchMatch) videoId = watchMatch[1];
+  else if (shortsMatch) videoId = shortsMatch[1];
+  else if (shortLinkMatch) videoId = shortLinkMatch[1];
+
+  if (videoId) return `https://www.youtube.com/embed/${videoId}`;
+
+  return url;
+}
+
 // Đọc tham số ?id=... trên URL, tìm game tương ứng trong "games" rồi render trang chi tiết
 (function renderGameDetail() {
   const root = document.getElementById("game-detail");
@@ -55,7 +74,7 @@
         ${
           game.detail.introVideo
             ? `<div class="detail-video-wrapper">
-                 <iframe src="${game.detail.introVideo}" allowfullscreen title="${game.title} - video giới thiệu"></iframe>
+                 <iframe src="${toYouTubeEmbedUrl(game.detail.introVideo)}" allowfullscreen title="${game.title} - video giới thiệu"></iframe>
                </div>`
             : ""
         }

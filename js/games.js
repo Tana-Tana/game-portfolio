@@ -55,7 +55,7 @@ const games = [
   {
     id: "grind-shot",
     title: "Grind Shot",
-    image: "assets/images/grind-shot-thumbnail.png",
+    image: "assets/images/grind-shot-thumbnail_2.png",
     shortDesc: "Game casual được team thực hiện trong 36h tại Voodoo Game Jam Vietnam 2026.",
     detail: {
       introVideo: "https://www.youtube.com/shorts/b6e1MWiD-yk",

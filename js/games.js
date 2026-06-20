@@ -26,14 +26,14 @@ const games = [
     id: "bubble-tea-go",
     title: "Bubble Tea Go",
     image: "assets/images/bubble-tea-go-thumbnail.png",
-    shortDesc: "Game platformer được team thực hiện trong 36h tại Global Game Jam Vietnam 2025. Game đạt giải nhất cuộc thi phần digital game.",
+    shortDesc: "A platformer game created by the team in 36 hours at Global Game Jam Vietnam 2025. The game won first place in the digital game competition.",
     detail: {
       introVideo: "https://www.youtube.com/watch?v=DGzBlY79ixY&t=41s",
       content: [
         {
           type: "text",
           value:
-            "Bubble Tea Go là game platformer với mục tiêu giải đố để đưa 2 nhân vật cùng vượt qua các chướng ngại vật trên đường về đích. 2 nhân vật này sử dụng chung một bộ điều khiển, nên người chơi phải tính toán di chuyển sao cho cả 2 cùng vượt qua được chướng ngại vật. Game có 3 level với độ khó tăng dần, mỗi level có một cơ chế mới được giới thiệu để tăng tính thử thách.",
+            "Bubble Tea Go is a platformer game with the goal of solving puzzles to help 2 characters overcome obstacles on their way to the finish line. These 2 characters share the same controller, so players must calculate movements so both can overcome obstacles. The game has 3 levels with increasing difficulty, each level introduces a new mechanism to increase the challenge.",
         },
         {
           type: "image",
@@ -43,7 +43,7 @@ const games = [
         {
           type: "text",
           value:
-            "Game được làm trong 36h, sử dụng Unity và bộ asset 2D tự vẽ, quá trình làm game được thực hiện hoàn toàn trong khuân khổ cuộc thi Global Game Jam Vietnam với chủ đề Bubble",
+            "The game was created in 36 hours, using Unity and a custom-drawn 2D asset set, with the entire game development process carried out within the framework of Global Game Jam Vietnam competition with the theme Bubble.",
         },
       ],
       links: [
@@ -56,16 +56,15 @@ const games = [
     id: "grind-shot",
     title: "Grind Shot",
     image: "assets/images/grind-shot-thumbnail_2.png",
-    shortDesc: "Game casual được team thực hiện trong 36h tại Voodoo Game Jam Vietnam 2026.",
+    shortDesc: "A casual game created by the team in 36 hours at Voodoo Game Jam Vietnam 2026.",
     detail: {
       introVideo: "https://www.youtube.com/shorts/b6e1MWiD-yk",
       content: [
         {
           type: "text",
           value:
-            "Một game hyper casual 2D được xây dựng với lối chơi đơn giản, " +
-            "nhiệm vụ của người chơi là giải đố để đưa các object ra khỏi ma trận để tiêu diệt các monster. " +
-            "Mỗi object sẽ có hướng và màu sắc, người chơi cần tính toán để chọn màu sắc hợp lý và clear được tất cả objects.",
+            "A hyper casual 2D game built with simple gameplay, the player's task is to solve puzzles to remove objects from the matrix to defeat monsters. " +
+            "Each object will have a direction and color, players need to calculate and choose the right color to clear all objects.",
         },
         {
           type: "image",
@@ -74,7 +73,7 @@ const games = [
         },
         {
           type: "text",
-          value: "Game được lấy ý tưởng từ 2 tựa game puzzle nổi tiếng là Bus Out và Marble Sort. Ý tưởng được phát triển dưới sự hướng dẫn của các mentor thuộc team Voodoo trong khuôn khổ cuộc thi Voodoo Game Jam Vietnam 2026.",
+          value: "The game took inspiration from 2 famous puzzle games: Bus Out and Marble Sort. The idea was developed under the guidance of mentors from the Voodoo team within the framework of the Voodoo Game Jam Vietnam 2026 competition.",
         },
       ],
       links: [
@@ -87,16 +86,15 @@ const games = [
     id: "aquapark",
     title: "Aquapark",
     image: "assets/images/aquapark-thumbnail.png",
-    shortDesc: "Game hyper casual 3D với lối chơi thân thiện, được tập trung vào feeling của người chơi.",
+    shortDesc: "A 3D hyper casual game with friendly gameplay, focused on the player's experience.",
     detail: {
       introVideo: "https://www.youtube.com/shorts/l77ZUdCZ5e4",
       content: [
         {
           type: "text",
           value:
-            "Một game hyper casual 3D được xây dựng với lối chơi thân thiện, " +
-            "Nhiệm vụ của người chơi là lựa chọn các phao trên khay, làm sao để các phao có thể đưa được tất cả người ở hàng chờ ra khỏi hàng đợi." +
-            "Mỗi phao và người sẽ có màu sắc khác nhau, người chơi cần tính toán để chọn phao phù hợp với màu sắc của người để clear được tất cả người chơi.",
+            "A 3D hyper casual game built with friendly gameplay. The player's task is to select floats from the tray, so that the floats can take all people out of the queue from the waiting line. " +
+            "Each float and person will have different colors, players need to calculate to choose floats suitable with the person's color to clear all players.",
         },
         {
           type: "image",

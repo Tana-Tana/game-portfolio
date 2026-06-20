@@ -10,11 +10,68 @@
 
   <div id="navbar-placeholder"></div>
 
-  <main class="page-content coming-soon">
-    <span class="coming-soon-badge">Sắp ra mắt</span>
-    <h1>About</h1>
-    <p>Tính năng này sẽ sớm được phát triển. Hẹn gặp lại bạn ở đây nhé! 👋</p>
-    <a href="index.html" class="btn-detail">&larr; Quay lại trang chủ</a>
+  <main class="page-content">
+    <div class="about-header">
+      <h1>About Us</h1>
+    </div>
+
+    <!-- Phần 1: Giới thiệu chung -->
+    <section class="about-section">
+        <p>Hello! We are <strong>Promici Studio</strong>, a passionate Game Development team. Our members proudly come from the <strong>PTIT Programming Club</strong> and <strong>PTIT Multimedia Club</strong>, which belong to the <strong>S2B Student Talent Development Community</strong>.</p>
+        <p>With our combined experience in Unity and participation in multiple Game Jams, we love tackling technical challenges and polishing "game feel" to deliver the best gameplay possible.</p>
+        <p><strong>Our Vision & Mission:</strong> We are dedicated to contributing to the growth of the Vietnamese gaming market and strive to put the Vietnam game industry on the global map.</p>
+
+    </section>
+
+    <!-- Phần 2: Thành tựu / Giải thưởng -->
+    <section class="about-section">
+      <h2 class="about-section-title">Our Achievements</h2>
+      <div class="achievements-list">
+        <div class="achievement-card">
+          <div class="achievement-image carousel">
+            <div class="carousel-track">
+              <img src="assets/images/bubble-tea-go-thumbnail.png" alt="Global Game Jam 2025" />
+              <!-- Thêm bao nhiêu ảnh tuỳ ý vào đây -->
+              <img src="assets/images/bubble-tea-go-1.png" alt="Bubble Tea Go Gameplay" />
+              <img src="assets/images/gamejam-1.jpg" alt="Bubble Tea Go Gameplay" />
+              <img src="assets/images/gamejam-2.jpg" alt="Bubble Tea Go Gameplay" />
+            </div>
+            <button class="carousel-button prev" aria-label="Previous image">&#10094;</button>
+            <button class="carousel-button next" aria-label="Next image">&#10095;</button>
+          </div>
+          <div class="achievement-info">
+            <h3>1st Place - Global Game Jam 2025 (Vietnam)</h3>
+            <p>Won the digital game category with our puzzle platformer "Bubble Tea Go", created entirely within 36 hours.</p>
+          </div>
+        </div>
+        
+        <div class="achievement-card">
+          <div class="achievement-image carousel">
+            <div class="carousel-track">
+              <img src="assets/images/grind-shot-thumbnail_2.png" alt="Voodoo Game Jam 2026" />
+              <img src="assets/images/voodoo-1.jpg" alt="Voodoo Gameplay" />
+              <img src="assets/images/voodoo-2.jpg" alt="Voodoo Gameplay" />
+            </div>
+            <button class="carousel-button prev" aria-label="Previous image">&#10094;</button>
+            <button class="carousel-button next" aria-label="Next image">&#10095;</button>
+          </div>
+          <div class="achievement-info">
+            <h3>Top Participants - Voodoo Game Jam 2026</h3>
+            <p>Developed "Grind Shot" under the guidance of Voodoo mentors, focusing on hyper-casual mechanics. We are proud to be one of the 24 teams in Vietnam selected to participate in the Voodoo Game Jam.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phần 3: Liên hệ -->
+    <section class="about-section contact-section">
+        <h2 class="about-section-title">Contact Us</h2>
+      <p>Interested in working together or just want to say hi? Feel free to reach out!</p>
+        <div class="about-links">
+          <a href="mailto:tuanngoc.tn1204@gmail.com" class="btn-detail">Email</a>
+          <a href="https://github.com/0sym1" class="btn-detail" target="_blank">GitHub</a>
+        </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -22,5 +79,6 @@
   </footer>
 
   <script src="js/navbar.js"></script>
+  <script src="js/about.js"></script>
 </body>
 </html>
